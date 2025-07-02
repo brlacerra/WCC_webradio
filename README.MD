@@ -16,7 +16,6 @@ WWC Radio é um player web que utiliza a **API do Spotify** para reproduzir mús
 
 ---
 
-```markdown
 # WWC Radio – Web Player with Recommendation Intelligence
 
 WWC Radio is a web player that uses the **Spotify API** to play music from selected playlists, store playback behavior data, and automatically generate rankings based on each track’s daily average volume. The system includes a Node.js backend, MySQL database, and Spotify authentication.
@@ -32,7 +31,6 @@ WWC Radio is a web player that uses the **Spotify API** to play music from selec
 - Authenticates with Spotify (OAuth2)
 - Structure ready for future graphing and analytics
 - Backend includes automatic updates via cron job
-```
 
 ## Tecnologies
 
@@ -50,7 +48,7 @@ WWC Radio is a web player that uses the **Spotify API** to play music from selec
 - npm install
 
 - npm start
-- ou
+ou
 - npx nodemon src/server.js
 
 ## DEV
