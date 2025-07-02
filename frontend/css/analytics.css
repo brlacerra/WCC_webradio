@@ -1,0 +1,218 @@
+/*Códigos da página de analytics*/
+#content_analytics .content_block{
+    display: flex;
+    flex-direction: column;
+}
+
+#canvas{
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+#analytics{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(28, 28, 28, 0.3);
+    padding: 10px;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+#toogleChart{
+    background-color: transparent;
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 10px;
+    color: gray;
+    transition: 300ms;
+}
+#toogleChart:hover{
+    color: white;
+    border-color: white;
+}
+#selected_music_infos{
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 8px;
+}
+#l_infos{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#l_infos img{
+    border-radius: 8px;
+}
+#c_infos{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#music_item_author, #music_item_album{
+    color: lightgray;
+}
+#r_infos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+#selected_music_data{
+    display: flex;
+    flex-grow: 1;
+    box-sizing: border-box;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+#l_insights, #r_insights{
+    background-color: rgba(28, 28, 28, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 49%;
+}
+#l_insights{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+#r_insights{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.searcher{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.searcher input, .searcher input:-webkit-autofill{
+    background-color: rgba(28, 28, 28, 0.3);
+    color: white;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: clamp(1rem, 0.5vw, 1rem);
+    box-sizing: border-box;
+}
+.searcher input:focus {
+    outline: none; 
+    box-shadow: none; 
+}
+.music_list{
+    flex-grow: 1;
+    overflow: auto;
+    height: 100%;
+}
+
+.music_list::-webkit-scrollbar{
+    display: none;
+}
+.music_item{
+    height: auto;
+    background-color: rgba(28, 28, 28, 0.3);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.music_item:last-child{
+    margin-bottom: 0px;
+}
+
+.music_item:focus{
+    background-color: #1C1C1C;
+}
+.music_item:hover{
+    background-color: #1C1C1C;
+}
+.music_item_photoname{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 60%;
+}
+.music_item img{
+    border-radius: 8px;
+    width: clamp(50px, 20%, 80px);
+}
+.music_item_title{
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    color: white;
+}
+.music_item_author{
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    color: lightgray;
+    display: flex;
+    width: auto;
+    text-align: right;
+}
+
+#analytics_music_selected{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.another_blocks{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#music_not_reproduced{
+    display: none;
+}
+@media (max-width: 800px){
+    #content_analytics{
+        flex-direction: column-reverse;
+        padding-top: 50px;
+    }
+    #content_analytics .content_block{
+        height: auto;
+    }
+    #content_analytics .content_block:last-child{
+        min-height: 60%;
+        max-height: 60%;
+    }
+    .music_list{
+        overflow: auto;
+        max-height: 40vh;
+    }
+
+    #canvas{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        min-height: 30vh;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #131111;
+        border-radius: 8px;
+    }
+
+    .searcher input{
+        background-color: #131111;
+    }
+
+}

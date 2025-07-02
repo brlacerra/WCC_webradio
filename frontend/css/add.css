@@ -1,0 +1,144 @@
+#music_query{
+    width: 100%;
+    display: flex;
+    background-color: blue;
+}
+#search_music{
+    height: 100%;
+}
+#add_music{
+    box-sizing: border-box;
+    background-image: url('../imgs/fundo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Cor preta com 50% de opacidade */
+    background-blend-mode: overlay;
+}
+#music_start_toAdd{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding-left: 30%;
+    padding-right: 30%;
+    height: 100%;
+}
+
+#music_preview_list{
+    flex-grow: 1;
+    height: 90%;
+    overflow: auto;
+}
+
+#music_preview_list::-webkit-scrollbar{
+    display: none;
+}
+
+#music_selected_toAdd{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    color: white;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0 10px 0 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    transition: background-color 0.4s ease;
+}
+#l_musicToAdd{
+    width: 70%;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#l_musicToAdd img{
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+}
+#r_musicToAdd{
+    flex-grow: 1;
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+#r_musicToAdd h1{
+    font-size: clamp(1.5rem, 1.5vw, 3rem);
+}
+#returnToAdd h1{
+    font-size: clamp(1.5rem, 1.5vw, 3rem);
+}
+#r_musicToAdd h2{
+    font-size: clamp(1.2rem, 1.2vw, 2.5rem);
+}
+#r_musicToAdd p{
+    font-size: clamp(1rem, 1vw, 1.5rem);
+}
+#return_toQuery_logo{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+#add_music .btn{
+    width: 80%;
+    text-align: center;
+}
+#returnToAdd{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* Spinner de carregamento */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1); /* Cor do fundo */
+    border-top: 4px solid #3498db; /* Cor da borda superior */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: auto; /* Centraliza o spinner */
+}
+
+/* Animação de rotação */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media (max-width: 800px) {
+    #add_music{
+        align-items: center;
+        flex-direction: column-reverse;
+        min-height: 100vh;
+    }
+    #music_selected_toAdd{
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    #music_start_toAdd{
+        padding-top: 400px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

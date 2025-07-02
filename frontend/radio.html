@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title id="titlePage" onchange="scrollPageTitle()">West Coast Classics</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/radio.css">
+    <link rel="stylesheet" href="css/analytics.css">
+    <link rel="stylesheet" href="css/add.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="imgs/logo.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div id="mainPage">
+        <div class="ini_background" id="ini_background">
+            <img class="logo_bg" src="imgs/logo.svg" alt="" srcset="">
+        </div>
+        <div class="ini_content" id="ini_content">
+            <p>“Coming at you from the city of Davis - music from the days of the pager.”</p>
+            <button id="loginBtn" class="btn">Login com o Spotify</button>
+            <button id="start" class="btn-effect" style="display: none;"><h2>WCC!</h2></button>
+        </div>
+    </div>
+    <div id="presentation1" style="display: none;">
+        <img src="imgs/rockstar1.png" alt="">
+    </div>
+    <div id="presentation2" style="display: none;">
+        <img src="imgs/rockstar2.png" alt="">
+    </div>
+    
+    <nav id="navbar" class="navbar" style="display: none;">
+        <div class="left_nav">
+            <svg id="return_logo" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16" style="display: none;">
+                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+            </svg>
+        </div>
+        <div class="right_nav">
+            <svg style="display: none;" id="content_logo" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="grey" class="bi bi-vinyl" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4M4 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0"/>
+                <path d="M9 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+              </svg>
+            <svg id="add_logo" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+              </svg>
+            <svg id="analytics_logo" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
+            </svg> 
+        </div>
+    </nav>
+    
+    <div class="content" id="content" style="display: none;">
+        <div id="content_img" class="content_block" id="content_img">
+            
+
+            <div id="cd">
+                <img id="album_img" alt="" srcset="">
+                <div id="midselo" class="midselo">
+                    <img src="imgs/logo.svg" alt="" srcset="">
+                    <div id="buraco"></div>
+                </div>
+            </div>
+            <div id="music_description" class="music_description" style="display: none;">
+
+            </div>
+        </div>
+        <div id="content_music" class="content_block">
+            <div id="content_music_letra" class="content_music_letra">
+                <svg id="expand_lyrics" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707m0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707m-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707"/>
+                </svg>
+                <div id="letra" class="letter_block">
+                </div>
+                <canvas id="eqCanvas" class="letter_block"></canvas>
+            </div>
+            <div class="content_music_info">
+                <audio id="audio"></audio>
+                <div id="infos">
+                    <a id="music_link" href="" target="_blank">
+                        <svg id="spotify_toMusic" xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/>
+                        </svg>
+                    </a>
+                    <div id="firstblock">
+                        <p id="music_title"></p>
+                        <div class="author_block">
+                            <svg id="explicit_content" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-explicit" viewBox="0 0 16 16">
+                                <path d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826z"/>
+                                <path d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z"/>
+                            </svg>
+                            <p id="music_author"></p>
+                        </div>
+                        
+                    </div>
+                    <div id="secondblock">
+                        <p id="music_album"></p>
+                        <p id="music_year"></p>
+                    </div>
+                    <div id="thirdblock">
+                        <div id="th_times">
+                            <p id="atual_time">00:00</p>
+                            <p id="music_duration">00:00</p>
+                        </div>
+                        <div id="progress" class="progress">
+                            <div id="progress_bar" class="progress_bar"></div>
+                        </div> 
+                    </div>
+                    <div id="fourthblock">
+                        <div class="fourthpart">
+                            <svg id="vol_down" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-volume-down-fill" viewBox="0 0 16 16">
+                                <path d="M9 4a.5.5 0 0 0-.812-.39L5.825 5.5H3.5A.5.5 0 0 0 3 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 9 12zm3.025 4a4.5 4.5 0 0 1-1.318 3.182L10 10.475A3.5 3.5 0 0 0 11.025 8 3.5 3.5 0 0 0 10 5.525l.707-.707A4.5 4.5 0 0 1 12.025 8"/>
+                            </svg>
+                            <div class="vol_container">
+                                <div class="vol_bar" id="vol_bar"></div>
+                            </div>
+                            <svg id="vol_up" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/>
+                                <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content_analytics" class="content" style="display: none;">
+        <div class="content_block">
+            <div id="canvas">
+                <canvas id="volGraf"></canvas>
+                <canvas id="rankingGraf" style="display: none;"></canvas>
+            </div>
+            <div id="analytics" style="color: white;">
+                <div id="analytics_music_selected">
+                    <button id="toogleChart">Analisar gráfico de ranking</button>
+                    <div id="selected_music_infos">
+                        <div id="l_infos">
+                            <img src="" width="80" id="music_item_img" alt="">
+                        </div>
+                        <div id="c_infos">
+                            <div style="display: flex; gap: 5px;">
+                                <p id="music_item_title">Nome da musica</p>
+                                <svg id="analytics_explicit_content" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-explicit" viewBox="0 0 16 16">
+                                    <path d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826z"/>
+                                    <path d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z"/>
+                                </svg>
+                            </div>
+                            <p id="music_item_author">Autor da Musica</p>
+                            <p id="music_item_album">Album da Musica</p>
+                        </div>
+                        <div id="r_infos">
+                            <p id="music_item_duration">Duração da musica</p>
+                        </div>
+                    </div>
+                    <div id="selected_music_data">
+                        <div id="l_insights">
+                            <p id="music_times_played">Quantidade de vezes reproduzida</p>
+                            <p id="music_geral_vol_media">Média Geral de Volume</p>
+                        </div>
+                        <div id="r_insights">
+                            <h1 id="music_ranking">#X</h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="analytics_waiting_music" class="another_blocks"><h3>Selecione uma musica para visualizar os dados</h3></div>
+                <div id="music_not_reproduced" class="another_blocks">Música nunca reproduzida na rádio West Coast Classics</div>
+            </div>
+        </div>
+        <div class="content_block">
+            <div class="searcher">
+                <input id="music_searcher" type="text" placeholder="Digite o título da musica que deseja pesquisar" oninput="searchAndRenderTracks()">
+            </div>
+            <div class="music_list" id="music_list">
+            </div>
+        </div>
+    </div>
+    <div id="add_music" class="content" style="display: none;">
+            <div id="search_music">
+                <div class="searcher">
+                    <input type="text" id="music_adder" placeholder="Digite o nome da música que deseja adicionar" oninput="loadAndShowQueryMusics()">
+                </div>
+                <div id="music_start_toAdd"><h1>Contribua com o Spotify e a Rádio West Coast Classics e adicione ícones do rap de West Side a nossa rádio!</h1></div>
+                <div id="music_preview_list" style="display: none;">
+                </div>
+            </div>
+            <div id="music_selected_toAdd" style="display: none;">
+                <svg id="return_toQuery_logo" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+                </svg>
+                <div id="l_musicToAdd">
+                    <img id="music_toAdd_img" src="" alt="">
+                </div>
+                <div id="r_musicToAdd">
+                    <h1 id="music_toAdd_title"></h1>
+                    <h2 id="music_toAdd_author"></h2>
+                    <p id="music_toAdd_album"></p>
+                    <p id="music_toAdd_year"></p>
+                    <p id="music_toAdd_duration"></p>
+                    <div class="btn" id="addToSpotify">Adicionar ao Spotify</div>
+                </div>
+                <div id="returnToAdd" style="display: none;">
+                    <div id="returnLoading"><h1>Adicionando música a playlist...</h1></div>
+                    <div id="successAdd" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="color: #1db954;" width="64" height="64" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                          </svg>
+                        <h1>Musica Adicionada com sucesso</h1>
+                    </div>
+                    <div id="failAdd" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="color: yellow;" width="64" height="64" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                            <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+                            <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        <h1>Música já está na playlist</h1>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/node-vibrant/dist/vibrant.min.js"></script>
+    <script src="js/radio.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/letras.js"></script>
+    <script src="js/music_objetcs.js"></script>
+    <script src="js/add.js"></script>
+</body>
+
+</html>
